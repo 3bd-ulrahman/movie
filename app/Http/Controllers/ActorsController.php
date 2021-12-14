@@ -1,11 +1,10 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\Http\Controllers;
 
-use {{ rootNamespace }}Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class {{ class }} extends Controller
+class ActorsController extends Controller
 {
     public function index()
     {

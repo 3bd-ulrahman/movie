@@ -9739,7 +9739,6 @@ video {
 .select-all {
   -webkit-user-select: all;
      -moz-user-select: all;
-      -ms-user-select: all;
           user-select: all;
 }
 
@@ -21626,7 +21625,6 @@ video {
   .sm\:select-all {
     -webkit-user-select: all;
        -moz-user-select: all;
-        -ms-user-select: all;
             user-select: all;
   }
 
@@ -33489,7 +33487,6 @@ video {
   .md\:select-all {
     -webkit-user-select: all;
        -moz-user-select: all;
-        -ms-user-select: all;
             user-select: all;
   }
 
@@ -45352,7 +45349,6 @@ video {
   .lg\:select-all {
     -webkit-user-select: all;
        -moz-user-select: all;
-        -ms-user-select: all;
             user-select: all;
   }
 
@@ -57215,7 +57211,6 @@ video {
   .xl\:select-all {
     -webkit-user-select: all;
        -moz-user-select: all;
-        -ms-user-select: all;
             user-select: all;
   }
 

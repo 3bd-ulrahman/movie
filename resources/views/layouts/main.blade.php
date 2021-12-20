@@ -11,7 +11,7 @@
 
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    
+
     {{-- <livewire --}}
     @livewireStyles
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -31,10 +31,10 @@
                     <a href="{{ route('movies.index') }}" class="hover:text-geray-300">Movies</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="" class="hover:text-geray-300">TV Shows</a>
+                    <a href="{{ route('tv.index') }}" class="hover:text-geray-300">TV Shows</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
-                    <a href="" class="hover:text-geray-300">Actors</a>
+                    <a href="{{ route('actors.index') }}" class="hover:text-geray-300">Actors</a>
                 </li>
             </ul>
 
@@ -56,5 +56,7 @@
     @yield('content')
 
     @livewireScripts
+
+    @stack('scripts')
 </body>
 </html>

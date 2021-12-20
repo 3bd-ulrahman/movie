@@ -18,9 +18,7 @@
                 <span class="mx-2">|</span>
                 <span>{{ $movie['release_date'] }}</span>
                 <span class="mx-2">|</span>
-                <span>
-                    {{ $movie['genres'] }}
-                </span>
+                <span>{{ $movie['genres'] }}</span>
             </div>
 
             <p class="text-gray-300 mt-8">
@@ -52,30 +50,28 @@
                     </div>
 
                     <template x-if="isOpen">
-                        <div
-                            style="background-color: rgba(0, 0, 0, .5);"
-                            class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto">
-
-                            <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
-                                <div class="bg-gray-900 rounded">
-                                    <div class="flex justify-end pr-4 pt-2">
-                                        <button
-                                            @click="isOpen = false"
-                                            @keydown.escape.window="isOpen = false"
-                                            class="text-3xl leading-none hover:text-gray-300">&times;
-                                        </button>
-                                    </div>
-                                    <div class="modal-body px-8 py-8">
-                                        <div class="responsive-container overflow-hidden relative" style="padding-top: 56.25%">
-                                            <iframe class="responsive-iframe absolute top-0 left-0 w-full h-full"
-                                                src="https://www.youtube.com/embed/{{ $movie['videos']['results'][0]['key'] }}"
-                                                style="border:0;" allow="autoplay; encrypted-media" allowfullscreen>
-                                            </iframe>
-                                        </div>
-                                    </div>
+                    <div style="background-color: rgba(0, 0, 0, .5);"
+                        class="fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto">
+                    <div class="container mx-auto lg:px-32 rounded-lg overflow-y-auto">
+                        <div class="bg-gray-900 rounded">
+                            <div class="flex justify-end pr-4 pt-2">
+                                <button
+                                    @click="isOpen = false"
+                                    @keydown.escape.window="isOpen = false"
+                                    class="text-3xl leading-none hover:text-gray-300">&times;
+                                </button>
+                            </div>
+                            <div class="modal-body px-8 py-8">
+                                <div class="responsive-container overflow-hidden relative" style="padding-top: 56.25%">
+                                    <iframe class="responsive-iframe absolute top-0 left-0 w-full h-full"
+                                        src="https://www.youtube.com/embed/{{ $movie['videos']['results'][0]['key'] }}"
+                                        style="border:0;" allow="autoplay; encrypted-media" allowfullscreen>
+                                    </iframe>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    </div>
                     </template>
                 @endif
             </div>
@@ -94,12 +90,12 @@
 
             @foreach ($movie['cast'] as $cast)
                 <div class="mt-8">
-                    <a href="#">
+                    <a href="{{ route('actors.show', $cast['id']) }}">
                         <img src="https://image.tmdb.org/t/p/w500/{{ $cast['profile_path'] }}" alt="actor"
                             class="hover:opacity-75 transition ease-in-out duration-150 w-full h-64">
                     </a>
                     <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray:300">{{ $cast['name'] }}</a>
+                        <a href="{{ route('actors.show', $cast['id']) }}" class="text-lg mt-2 hover:text-gray:300">{{ $cast['name'] }}</a>
                         <div class="text-sm text-gray-400">
                             {{ $cast['character'] }}
                         </div>

@@ -6,7 +6,9 @@
     <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
 
         <div class="flex-none">
-            <img src="{{ $movie['poster_path'] }}" alt="parasite" class="w-64 lg:w-96">
+            @if ($movie['poster_path'])
+                <img src="{{ $movie['poster_path'] }}" alt="parasite" class="w-64 lg:w-96">
+            @endif
         </div>
 
         <div class="md:ml-24">
@@ -34,6 +36,11 @@
                             <div class="text-sm text-gray-400">{{ $crew['job'] }}</div>
                         </div>
                     @endforeach
+                    {{-- @forelse ($collection as $item)
+
+                    @empty
+
+                    @endforelse --}}
                 </div>
             </div>
 

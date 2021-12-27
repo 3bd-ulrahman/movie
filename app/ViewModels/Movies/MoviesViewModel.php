@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ViewModels;
+namespace App\ViewModels\Movies;
 
 use Spatie\ViewModels\ViewModel;
 use Carbon\Carbon;

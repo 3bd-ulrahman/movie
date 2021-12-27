@@ -68,16 +68,8 @@ class ActorViewModel extends ViewModel
                         : route('tv.show', $movie->id)
                 ])->only([
                     'poster_path', 'title', 'id', 'media_type', 'linkToPage',
-                ])->dump();
+                ]);
         }));
-
-        // return collect($castMovies)->sortByDesc('popularity')->take(5)->map(function ($movie) {
-        //     return collect($movie)->merge([
-        //         'poster_path' => $movie->poster_path
-        //             ? 'https://image.tmdb.org/t/p/w185'.$movie->poster_path
-        //             : 'https://via.placeholder.com/185x278',
-        //     ]);
-        // })->dump();
     }
 
     public function credits()
